@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Vue.jsとFirebaseでSPAなWebアプリ</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +24,59 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown data-separator="^---$" data-separator-vertical="^--$">
+					<textarea data-template>
+						### Vue.jsとFirebaseでSPAなWebアプリ
+						---
+						### Vue.jsとFirebaseって？
+						![image](./images/image01.png)
+						--
+						### Vue.jsって？
+						* UI開発のためのJavaScriptフレームワーク（SPA対応）
+						* シンプルで学習コストが低い
+						* CDNでもNPMでも開発できる
+						* データバインディング（MVVM）
+						* 他のフレームワークと組み合わせやすい
+						--
+						### Firebaseって？
+						* BaaS（mBaaS）
+						* Databaseの利用（NoSQL）
+						* 各種アカウントでの認証機能
+						* WebアプリのHosting（SPA対応）
+						* Storageの利用（5GB）
+						---
+						### 作ったWebアプリ
+						![image](./images/image02.png)  
+						[https://sophie-ac655.firebaseapp.com](https://sophie-ac655.firebaseapp.com)
+						--
+						### 参考にした書籍
+						![image](./images/image03.jpg)
+						--
+						### 工夫したところ
+						* Vue CLIをVer.2→Ver.3
+						* Vuetifyでデザイン
+						* Vuexを使って状態管理
+						* Linterの導入
+						---
+						### Vue CLIを使った開発
+						![image](./images/image04.png)
+						```console
+						$ npm install -g @vue/cli
+						$ vue create myvue
+						$ cd myvue
+						$ npm run serve
+						```
+						--
+						### Vuetifyの適用
+						![image](./images/image05.png)
+						```console
+						$ vue add vuetify
+						$ npm run serve
+						```
+						---
+						## Thank U for Reading
+					</textarea>
+				</section>
 			</div>
 		</div>
 
@@ -37,6 +88,8 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				history: true,
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
